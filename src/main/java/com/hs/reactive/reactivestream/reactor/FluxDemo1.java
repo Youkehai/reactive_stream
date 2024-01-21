@@ -1,10 +1,7 @@
 package com.hs.reactive.reactivestream.reactor;
 
-import org.reactivestreams.Subscription;
-import reactor.core.publisher.BaseSubscriber;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import reactor.core.publisher.SignalType;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -18,7 +15,7 @@ import java.util.List;
  * doOnxxx 方法，表示发生这个事件时，触发回调（不能改变元素和信号，只能做一些其他的处理）
  * onXxx   方法，表示发生这个事件后执行一个动作，可以改变元素或者信号，再继续传递
  */
-public class FluxDemo {
+public class FluxDemo1 {
     /**
      * flux 可以有多个元素
      *
