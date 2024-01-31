@@ -97,9 +97,9 @@ public class FluxRetryDeomo {
         Flux.just(1,2,3,4,5,6)
                 .contextWrite(Context.of("myContext1","myValue1"))
                 //方法名称中带 Contextual 的表示支持 context
-                .transformDeferredContextual((item,content)->{
+                .transformDeferredContextual((item,context)->{
                     //这里会打印出下面 contextWrite 方法中写入的数据 {myContext=myValue}，而不会打印 {myContext1=myValue1}
-                    System.out.println(content);
+                    System.out.println(context);
                     return Flux.range(1,9);
                 })
                 //一定要注意 contextWrite 只能从下游传播给上游，所以上游需要使用时，一定要定义在下面
